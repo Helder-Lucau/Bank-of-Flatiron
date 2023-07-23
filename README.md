@@ -8,19 +8,10 @@
 
 For this project, you’ll be building out a React application that displays a list of your recent bank transactions, among other features.
 
-The instructions below will walk you through the process of ideation and planning your app: deciding on your user interface, planning how the information will be laid out on the page, etc. You should work through all the planning steps before you start doing any coding.
-
-## Implementation
-
-* HTML
-* CSS
-* React
-* JSON
-
 ## Project Setup & Pre-requisite Data
 
 In your project directory, create a db.json file and use this [data](https://docs.google.com/document/d/1EWN0qLfAWfgzO1N2P8H5WmrsTx0nMkhp3s-rXVESTNA/edit). for your server DB.
-Run this command to get the backend started: **json-server --watch db.json**
+Run this command to get the backend started: `**json-server --watch db.json**`
 Test your server by visiting this route in the browser: http://localhost:8001/transactions
 
 
@@ -46,6 +37,27 @@ As a user, I should be able to:
 
 - Delete a transaction which will remove it from the table
 
-# Author & License
+## Author
 * This project code files is authored by [Helder Lucau](https://github.com/Helder-Lucau).
-* Licensed under the terms of **MIT License**
+
+## License
+
+Copyright (c) 2023 [Helder Lucau](https://github.com/Helder-Lucau).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files , to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Transactions from "./Transactions";
+import Form from "./Form";
+import SearchTransaction from "./SearchTransaction";
 
 function App() {
 
@@ -18,8 +20,10 @@ function App() {
    }, []);
 
   return (
-    <div className="app-container">
+    <div className="App">
     <h1>Bank of Flatiron</h1>
+    <SearchTransaction />
+    <Form />
     <Transactions transact={transaction} />
     </div>
   )

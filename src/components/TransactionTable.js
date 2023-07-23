@@ -1,22 +1,22 @@
 import React from "react";
+import TransactionTableRow from "./TransactionTableRow";
 
-function TransactionTable(props){
+function TransactionTable(header){
 
     return (
-        <div>
+        <table>
+            <thead>
             <tr>
                 <th>Date</th>
                 <th>Description</th>
                 <th>Category</th>
                 <th>Amount</th>
-                </tr>
-            <tr>
-                <td>{props.date}</td>
-                <td>{props.description}</td>
-                <td>{props.category}</td>
-                <td>{props.amount}</td>
             </tr>
-        </div>
+            </thead>
+            <tbody>
+                <TransactionTableRow header={header}/>
+            </tbody>
+        </table>
     )
 }
 export default TransactionTable;

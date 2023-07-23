@@ -12,7 +12,7 @@ function Transactions({transact}){
                     description={transactionData.description}
                     category={transactionData.category}
                     amount={transactionData.amount}
-                    />
+                />
             ))}
     </div>
     )

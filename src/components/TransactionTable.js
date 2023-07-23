@@ -1,13 +1,22 @@
 import React from "react";
 
-function TransactionTable({date, description, category, amount}){
+function TransactionTable(props){
+
     return (
-        <tr>
-            <td>{date}</td>
-            <td>{description}</td>
-            <td>{category}</td>
-            <td>{amount}</td>
-        </tr>
+        <div>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                </tr>
+            <tr>
+                <td>{props.date}</td>
+                <td>{props.description}</td>
+                <td>{props.category}</td>
+                <td>{props.amount}</td>
+            </tr>
+        </div>
     )
 }
 export default TransactionTable;

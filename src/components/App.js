@@ -18,11 +18,10 @@ function App() {
    }, []);
 
   return (
-    <React.Fragment>
+    <div className="app-container">
     <h1>Bank of Flatiron</h1>
-    <p>All Transactions</p>
-    <Transactions transactions={transaction} />
-    </React.Fragment>
+    <Transactions transact={transaction} />
+    </div>
   )
 }
 export default App;

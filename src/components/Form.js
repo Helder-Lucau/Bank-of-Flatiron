@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function Form() {
-  const [updateList, setUpdateList] = useState([])
+function Form({updateTransaction}) {
+  
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -10,24 +10,15 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const transactionInput = {
-      date,
-      description,
-      category,
-      amount
-    };
+    const transactionInput = {date, description, category, amount};
 
     fetch("http://localhost:8001/transactions", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(transactionInput),
     })
-
-    const updateTransactionTable = [...updateList, transactionInput]
-    setUpdateList(updateTransactionTable)
-
+    .then((res) => res.json())
+    .then(data => updateTransaction(data))
   }
 
   return (

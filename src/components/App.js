@@ -6,6 +6,7 @@ import SearchTransaction from "./SearchTransaction";
 function App() {
 
   const [transaction, setTransaction] = useState([]);
+  const [formData, setFormData] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:8001/transactions")
@@ -19,11 +20,16 @@ function App() {
       });
   }, []);
 
+  function updateTransactionList(newList){
+    const updateTransactionTable = [...formData, newList]
+    setFormData(updateTransactionTable)
+  }
+
   return (
     <div className="App">
       <h1>Bank of Flatiron</h1>
       <SearchTransaction />
-      <Form updateSetTransaction={setTransaction}/>
+      <Form updateTransaction={updateTransactionList}/>
       <Transactions transact={transaction} />
     </div>
   );

@@ -1,8 +1,19 @@
 import React from "react"
 
-function TransactionTableRow({header}){
+function TransactionTableRow({transactionItem, deleteTransaction}){
 
-    const {date, description, category, amount} = header
+    const {id, date, description, category, amount} = transactionItem
+
+    function handleDelete(id){
+        fetch(`http://localhost:8001/transactions/${id}`, {
+            method: "DELETE"
+        })
+        deleteTransaction(id)
+    }
+
+    function handleClick() {
+        handleDelete(id)
+    }
 
     return (
         <tr>
@@ -10,7 +21,7 @@ function TransactionTableRow({header}){
             <td>{description}</td>
             <td>{category}</td>
             <td>{amount}</td>
-            <td><button>Delete</button></td>
+            <td><button onClick={handleClick}>Delete</button></td>
         </tr>
     )
 }

@@ -6,7 +6,7 @@ import SearchTransaction from "./SearchTransaction";
 function App() {
 
   const [transaction, setTransaction] = useState([]);
-  const [formData, setFormData] = useState([])
+  // const [formData, setFormData] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:8001/transactions")
@@ -21,8 +21,13 @@ function App() {
   }, []);
 
   function updateTransactionList(newList){
-    const updateTransactionTable = [...formData, newList]
-    setFormData(updateTransactionTable)
+    const updateTransactionTable = [...transaction, newList]
+    setTransaction(updateTransactionTable)
+  }
+
+  function deleteTransaction(id){
+    const deleteData = transaction.filter(deleteTransactionData => deleteTransactionData.id !== id)
+    setTransaction(deleteData)
   }
 
   return (
@@ -30,7 +35,7 @@ function App() {
       <h1>Bank of Flatiron</h1>
       <SearchTransaction />
       <Form updateTransaction={updateTransactionList}/>
-      <Transactions transact={transaction} />
+      <Transactions transactions={transaction} onDeleteTransaction={deleteTransaction}/>
     </div>
   );
 }

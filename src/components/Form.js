@@ -11,6 +11,12 @@ function Form({updateTransaction}) {
     e.preventDefault();
 
     const transactionInput = {date, description, category, amount};
+    // const transactionInputB = {
+    //   date : date, 
+    //   description: description, 
+    //   category: category, 
+    //   amount: amount
+    // };
 
     fetch("http://localhost:8001/transactions", {
       method: "POST",
